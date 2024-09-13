@@ -105,9 +105,9 @@ jobs:
           curl -X POST -H 'Content-type: application/json' 
           --data '{"text":"Deployment and commit completed :github-check-mark: :party_blob: - http://amigoscode-api-env-1.eba-bircr3a3.ap-south-1.elasticbeanstalk.com/"}' 
           ${{ secrets.SLACK_WEBHOOK_URL }}
-          - name: Send Slack Message
-            if: always()
-            run: >
+    - name: Send Slack Message
+      if: always()
+      run: >
               curl -X POST -H 'Content-type: application/json' 
               --data '{"text":"Job Status ${{ job.status }}"}' 
               ${{ secrets.SLACK_WEBHOOK_URL }}
