@@ -73,8 +73,8 @@ jobs:
             wait_for_environment_recovery: 60
       - name: Send Slack Message
         run: >
-          curl -X POST -H 'Content-type: application/json' 
-                    --data '{"text":":githubloading: Committing to repo https://github.com/mohanakrishnan89/spring-boot-full-stack/"}' 
+            curl -X POST -H 'Content-type: application/json' 
+            --data '{"text":":githubloading: Committing to repo https://github.com/mohanakrishnan89/spring-boot-full-stack/"}' 
                     ${{ secrets.SLACK_WEBHOOK_URL }}
       - name: Commit and push Dockerrun.aws.json
         run: |
@@ -85,9 +85,9 @@ jobs:
             git push
       - name: Send Slack Message
         run: >
-            curl -X POST -H 'Content-type: application/json' 
-                --data '{"text":"Deployment and commit completed :github-check-mark: :party_blob: - http://amigoscode-api-env-1.eba-bircr3a3.ap-south-1.elasticbeanstalk.com/"}' 
-                ${{ secrets.SLACK_WEBHOOK_URL }}
+          curl -X POST -H 'Content-type: application/json' 
+          --data '{"text":"Deployment and commit completed :github-check-mark: :party_blob: - http://amigoscode-api-env-1.eba-bircr3a3.ap-south-1.elasticbeanstalk.com/"}' 
+          ${{ secrets.SLACK_WEBHOOK_URL }}
       - name: Send Slack Message
         if: always()
         run: >
