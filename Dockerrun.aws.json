@@ -21,7 +21,7 @@
     },
     {
       "name": "amigoscode-react",
-      "image": "maddy2910/amigoscode-react:latest",
+      "image": "maddy2910/amigoscode-react:20.10.2024.14.25.03",
       "essential": true,
       "memory": 256,
       "portMappings": [
